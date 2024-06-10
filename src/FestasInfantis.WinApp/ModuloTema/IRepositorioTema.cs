@@ -5,7 +5,7 @@
         void Cadastrar(Tema novoTema);
         bool Editar(int id, Tema temaEditado);
         bool Excluir(int id);
-        Tema SelecionarPorId(int v);
+        Tema SelecionarPorId(int id);
         List<Tema> SelecionarTodos();
     }
 }
