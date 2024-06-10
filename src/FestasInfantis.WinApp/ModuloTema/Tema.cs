@@ -53,6 +53,11 @@ namespace FestasInfantis.WinApp.ModuloTema
             return true;
         }
 
+        public decimal CalcularValorComDesconto(decimal percentualCliente)
+        {
+            return Valor - (Valor * percentualCliente / 100);
+        }
+
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
         {
             Tema tema = (Tema)novoRegistro;
