@@ -1,10 +1,15 @@
 using eAgenda.WinApp.Compartilhado;
+using FestasInfantis.WinApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloCliente;
 
 namespace FestasInfantis.WinApp
 {
     public partial class TelaPrincipalForm : Form
     {
         ControladorBase controlador;
+
+        ContextoDados contexto;
+        IRepositorioCliente repositorioCliente;
 
         public static TelaPrincipalForm Instancia { get; private set; }
 
@@ -14,11 +19,36 @@ namespace FestasInfantis.WinApp
 
             lblTipoCadastro.Text = string.Empty;
             Instancia = this;
+
+            contexto = new ContextoDados(true);
+            repositorioCliente = new RepositorioClienteEmArquivo(contexto);
         }
 
         public void AtualizarRodape(string texto)
         {
             statusLabelPrincipal.Text = texto;
+        }
+
+        private void clientesMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorCliente(repositorioCliente);
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            controlador.Adicionar();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            controlador.Editar();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            controlador.Excluir();
         }
 
         private void ConfigurarTelaPrincipal(ControladorBase controladorSelecionado)
@@ -58,6 +88,5 @@ namespace FestasInfantis.WinApp
             pnlRegistros.Controls.Clear();
             pnlRegistros.Controls.Add(listagemContato);
         }
-
     }
 }
