@@ -1,4 +1,5 @@
 ﻿using FestasInfantis.WinApp.ModuloCliente;
+using FestasInfantis.WinApp.ModuloItem;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -9,12 +10,12 @@ namespace FestasInfantis.WinApp.Compartilhado
         private string caminho = $"C:\\temp\\FestasInfantis\\dados.json";
 
         public List<Cliente> Clientes { get; set; }
-        //public List<Item> Itens { get; set; }
+        public List<Item> Itens { get; set; }
 
         public ContextoDados()
         {
             Clientes = new List<Cliente>();
-            //Itens = new List<Item>();
+            Itens = new List<Item>();
         }
 
         public ContextoDados(bool carregarDados) : this()
@@ -60,7 +61,7 @@ namespace FestasInfantis.WinApp.Compartilhado
                 return;
 
             Clientes = ctx.Clientes;
-            //Itens = ctx.Itens;
+            Itens = ctx.Itens;
         }
     }
 }
