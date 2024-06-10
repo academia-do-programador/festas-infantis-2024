@@ -13,6 +13,9 @@ namespace FestasInfantis.WinApp.Compartilhado
         public RepositorioBaseEmArquivo(ContextoDados contexto)
         {
             this.contexto = contexto;
+
+            if (ObterRegistros().Count > 0)
+                contadorId = ObterRegistros().Max(e => e.Id) + 1;
         }
 
         public void Cadastrar(T novoRegistro)
