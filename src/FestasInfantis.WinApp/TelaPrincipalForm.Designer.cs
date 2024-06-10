@@ -90,8 +90,9 @@
             // itensToolStripMenuItem
             // 
             itensToolStripMenuItem.Name = "itensToolStripMenuItem";
-            itensToolStripMenuItem.Size = new Size(109, 24);
+            itensToolStripMenuItem.Size = new Size(180, 24);
             itensToolStripMenuItem.Text = "Itens";
+            itensToolStripMenuItem.Click += itensToolStripMenuItem_Click;
             // 
             // alugueisMenuItem
             // 

@@ -1,6 +1,7 @@
 using eAgenda.WinApp.Compartilhado;
 using FestasInfantis.WinApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloCliente;
+using FestasInfantis.WinApp.ModuloItem;
 
 namespace FestasInfantis.WinApp
 {
@@ -10,6 +11,7 @@ namespace FestasInfantis.WinApp
 
         ContextoDados contexto;
         IRepositorioCliente repositorioCliente;
+        IRepositorioItem repositorioItem;
 
         public static TelaPrincipalForm Instancia { get; private set; }
 
@@ -22,6 +24,7 @@ namespace FestasInfantis.WinApp
 
             contexto = new ContextoDados(true);
             repositorioCliente = new RepositorioClienteEmArquivo(contexto);
+            repositorioItem = new RepositorioItemEmArquivo(contexto);
         }
 
         public void AtualizarRodape(string texto)
@@ -32,6 +35,13 @@ namespace FestasInfantis.WinApp
         private void clientesMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorCliente(repositorioCliente);
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void itensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorItem(repositorioItem);
 
             ConfigurarTelaPrincipal(controlador);
         }
