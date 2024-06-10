@@ -86,6 +86,7 @@
             temasMenuItem.Name = "temasMenuItem";
             temasMenuItem.Size = new Size(180, 24);
             temasMenuItem.Text = "Temas";
+            temasMenuItem.Click += temasMenuItem_Click;
             // 
             // itensToolStripMenuItem
             // 

@@ -1,4 +1,6 @@
-﻿namespace FestasInfantis.WinApp.ModuloItem
+﻿using FestasInfantis.WinApp.ModuloTema;
+
+namespace FestasInfantis.WinApp.ModuloItem
 {
     public interface IRepositorioItem
     {
@@ -7,5 +9,8 @@
         bool Excluir(int id);
         Item SelecionarPorId(int id);
         List<Item> SelecionarTodos();
+
+        List<Item> SelecionarItensDisponiveis();
+        List<Item> SelecionarItensDisponiveisParaTema(Tema tema);
     }
 }
