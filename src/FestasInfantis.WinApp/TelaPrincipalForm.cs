@@ -1,10 +1,13 @@
 using eAgenda.WinApp.Compartilhado;
+using FestasInfantis.WinApp.Compartilhado;
 
 namespace FestasInfantis.WinApp
 {
     public partial class TelaPrincipalForm : Form
     {
         ControladorBase controlador;
+
+        ContextoDados contexto;
 
         public static TelaPrincipalForm Instancia { get; private set; }
 
@@ -14,11 +17,28 @@ namespace FestasInfantis.WinApp
 
             lblTipoCadastro.Text = string.Empty;
             Instancia = this;
+
+            contexto = new ContextoDados(true);
         }
 
         public void AtualizarRodape(string texto)
         {
             statusLabelPrincipal.Text = texto;
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            controlador.Adicionar();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            controlador.Editar();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            controlador.Excluir();
         }
 
         private void ConfigurarTelaPrincipal(ControladorBase controladorSelecionado)
