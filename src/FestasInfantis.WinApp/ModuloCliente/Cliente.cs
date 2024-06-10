@@ -31,7 +31,8 @@ namespace FestasInfantis.WinApp.ModuloCliente
                 erros.Add("O campo \"telefone\" não foi preenchido corretamente");
 
             if (string.IsNullOrEmpty(Cpf.Trim()))
-                erros.Add("O campo \"cpf\" é obrigatório");
+                erros.Add("O campo \"CPF\" é obrigatório");
+
             if (Cpf.Trim().Length < 14)
                 erros.Add("O campo \"CPF\" não foi preenchido corretamente");
 

@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using FestasInfantis.WinApp.ModuloCliente;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace FestasInfantis.WinApp.Compartilhado
