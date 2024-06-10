@@ -18,13 +18,9 @@ namespace FestasInfantis.WinApp.ModuloItem
 
         public List<Item> SelecionarItensDisponiveis(Tema temaSelecionado)
         {
-            var registrosRelacionados = ObterRegistros()
-                .Where(i => i.Tema != null)
-                .Where(i => i.Tema.Id == temaSelecionado.Id);
-
             return ObterRegistros()
                 .Where(i => i.Tema == null)
-                .Concat(registrosRelacionados)
+                .Concat(temaSelecionado.Itens)
                 .ToList();
         }
 
