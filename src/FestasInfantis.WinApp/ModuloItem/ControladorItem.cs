@@ -40,7 +40,8 @@ namespace FestasInfantis.WinApp.ModuloItem
 
         public override void Editar()
         {
-            Item itemSelecionado = repositorioItem.SelecionarPorId(tabelaItem.ObterRegistroSelecionado());
+            Item itemSelecionado =
+                repositorioItem.SelecionarPorId(tabelaItem.ObterRegistroSelecionado());
 
             if (itemSelecionado == null)
             {
@@ -72,7 +73,8 @@ namespace FestasInfantis.WinApp.ModuloItem
 
         public override void Excluir()
         {
-            Item itemSelecionado = repositorioItem.SelecionarPorId(tabelaItem.ObterRegistroSelecionado());
+            Item itemSelecionado =
+                repositorioItem.SelecionarPorId(tabelaItem.ObterRegistroSelecionado());
 
             if (itemSelecionado == null)
             {

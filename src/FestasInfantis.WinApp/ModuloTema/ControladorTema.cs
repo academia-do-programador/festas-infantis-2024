@@ -45,7 +45,9 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             CarregarTemas();
 
-            TelaPrincipalForm.Instancia.AtualizarRodape($"O registro \"{novoTema.Nome}\" foi criado com sucesso!");
+            TelaPrincipalForm
+                .Instancia
+                .AtualizarRodape($"O registro \"{novoTema.Nome}\" foi criado com sucesso!");
         }
 
         public override void Editar()
@@ -66,7 +68,8 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             TelaTemaForm telaTema = new TelaTemaForm();
 
-            List<Item> itensDisponiveis = repositorioItem.SelecionarItensDisponiveis(temaSelecionado);
+            List<Item> itensDisponiveis =
+                repositorioItem.SelecionarItensDisponiveis(temaSelecionado);
 
             telaTema.CarregarItens(itensDisponiveis);
 
@@ -81,7 +84,8 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             repositorioTema.Editar(temaSelecionado.Id, temaEditado);
 
-            repositorioTema.AtualizarItens(temaSelecionado, telaTema.ItensMarcados, telaTema.ItensDesmarcados);
+            repositorioTema
+                .AtualizarItens(temaSelecionado, telaTema.ItensMarcados, telaTema.ItensDesmarcados);
 
             CarregarTemas();
 
@@ -93,7 +97,7 @@ namespace FestasInfantis.WinApp.ModuloTema
         public override void Excluir()
         {
             Tema temaSelecionado =
-              repositorioTema.SelecionarPorId(tabelaTema.ObterRegistroSelecionado());
+                repositorioTema.SelecionarPorId(tabelaTema.ObterRegistroSelecionado());
 
             if (temaSelecionado == null)
             {
@@ -106,8 +110,12 @@ namespace FestasInfantis.WinApp.ModuloTema
                 return;
             }
 
-            DialogResult resposta = MessageBox.Show($"Você deseja realmente excluir o registro \"{temaSelecionado.Nome}\"?"
-                , "Confirmar Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult resposta = MessageBox.Show(
+                $"Você deseja realmente excluir o registro \"{temaSelecionado.Nome}\"?",
+                "Confirmar Exclusão",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
 
             if (resposta != DialogResult.Yes)
                 return;
@@ -116,7 +124,9 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             CarregarTemas();
 
-            TelaPrincipalForm.Instancia.AtualizarRodape($"O registro \"{temaSelecionado.Nome}\" foi excluído com sucesso!");
+            TelaPrincipalForm
+                .Instancia
+                .AtualizarRodape($"O registro \"{temaSelecionado.Nome}\" foi excluído com sucesso!");
         }
 
         public override UserControl ObterListagem()
