@@ -34,5 +34,16 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             contexto.Gravar();
         }
+
+        public void AtualizarItens(Tema temaSelecionado, List<Item> itensMarcados, List<Item> itensDesmarcados)
+        {
+            foreach (Item i in itensDesmarcados)
+                temaSelecionado.RemoverItem(i);
+
+            foreach (Item i in itensMarcados)
+                temaSelecionado.AdicionarItem(i);
+
+            contexto.Gravar();
+        }
     }
 }
