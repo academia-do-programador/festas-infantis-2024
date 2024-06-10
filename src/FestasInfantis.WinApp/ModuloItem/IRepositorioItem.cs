@@ -7,5 +7,6 @@
         bool Excluir(int id);
         Item SelecionarPorId(int id);
         List<Item> SelecionarTodos();
+        List<Item> SelecionarItensDisponiveis();
     }
 }

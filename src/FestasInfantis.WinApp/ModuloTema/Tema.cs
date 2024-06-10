@@ -29,23 +29,6 @@ namespace FestasInfantis.WinApp.ModuloTema
             Nome = nome;
         }
 
-        public override void AtualizarRegistro(EntidadeBase novoRegistro)
-        {
-            Tema tema = (Tema)novoRegistro;
-
-            Nome = tema.Nome;
-        }
-
-        public override List<string> Validar()
-        {
-            List<string> erros = new List<string>();
-
-            if (string.IsNullOrEmpty(Nome.Trim()))
-                erros.Add("O campo \"Nome\" é obrigatório");
-
-            return erros;
-        }
-
         public bool AdicionarItem(Item item)
         {
             if (Itens.Contains(item))
@@ -68,6 +51,23 @@ namespace FestasInfantis.WinApp.ModuloTema
             item.RemoverTema();
 
             return true;
+        }
+
+        public override void AtualizarRegistro(EntidadeBase novoRegistro)
+        {
+            Tema tema = (Tema)novoRegistro;
+
+            Nome = tema.Nome;
+        }
+
+        public override List<string> Validar()
+        {
+            List<string> erros = new List<string>();
+
+            if (string.IsNullOrEmpty(Nome.Trim()))
+                erros.Add("O campo \"Nome\" é obrigatório");
+
+            return erros;
         }
 
         public override string ToString()

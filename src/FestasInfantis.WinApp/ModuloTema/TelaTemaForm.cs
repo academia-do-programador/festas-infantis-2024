@@ -11,6 +11,17 @@ namespace FestasInfantis.WinApp.ModuloTema
             get { return tema; }
         }
 
+        public List<Item> ItensMarcados
+        {
+            get
+            {
+                return listItens
+                    .CheckedItems
+                    .Cast<Item>()
+                    .ToList();
+            }
+        }
+
         public TelaTemaForm()
         {
             InitializeComponent();

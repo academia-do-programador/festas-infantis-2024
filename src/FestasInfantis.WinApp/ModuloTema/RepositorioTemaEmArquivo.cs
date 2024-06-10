@@ -27,27 +27,10 @@ namespace FestasInfantis.WinApp.ModuloTema
             return base.Excluir(id);
         }
 
-        public void AdicionarItens(Tema temaSelecionado, List<Item> itens)
+        public void AdicionarItens(Tema novoTema, List<Item> itensMarcados)
         {
-            foreach (Item item in itens)
-                temaSelecionado.AdicionarItem(item);
-
-            contexto.Gravar();
-        }
-
-        public void AtualizarItens(Tema temaSelecionado, List<Item> itensDesmarcados, List<Item> itensMarcados)
-        {
-            foreach (Item i in itensDesmarcados)
-            {
-                if (temaSelecionado.Itens.Contains(i))
-                    temaSelecionado.RemoverItem(i);
-            }
-
-            foreach (Item i in itensMarcados)
-            {
-                if (!temaSelecionado.Itens.Contains(i))
-                    temaSelecionado.AdicionarItem(i);
-            }
+            foreach (Item item in itensMarcados)
+                novoTema.AdicionarItem(item);
 
             contexto.Gravar();
         }

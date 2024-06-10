@@ -8,6 +8,13 @@ namespace FestasInfantis.WinApp.ModuloItem
         {
         }
 
+        public List<Item> SelecionarItensDisponiveis()
+        {
+            return ObterRegistros()
+                .Where(i => i.Tema == null)
+                .ToList();
+        }
+
         protected override List<Item> ObterRegistros()
         {
             return contexto.Itens;
