@@ -1,6 +1,7 @@
 using eAgenda.WinApp.Compartilhado;
 using FestasInfantis.WinApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloCliente;
+using FestasInfantis.WinApp.ModuloD;
 using FestasInfantis.WinApp.ModuloItem;
 using FestasInfantis.WinApp.ModuloTema;
 
@@ -15,6 +16,7 @@ namespace FestasInfantis.WinApp
         IRepositorioCliente repositorioCliente;
         IRepositorioItem repositorioItem;
         IRepositorioTema repositorioTema;
+        RepositorioEntidadeD repositorioEntidadeD;
 
         public static TelaPrincipalForm Instancia { get; private set; }
 
@@ -29,6 +31,7 @@ namespace FestasInfantis.WinApp
             repositorioCliente = new RepositorioClienteEmArquivo(contexto);
             repositorioItem = new RepositorioItemEmArquivo(contexto);
             repositorioTema = new RepositorioTemaEmArquivo(contexto);
+            repositorioEntidadeD = new RepositorioEntidadeD();
         }
 
         public void AtualizarRodape(string texto)
