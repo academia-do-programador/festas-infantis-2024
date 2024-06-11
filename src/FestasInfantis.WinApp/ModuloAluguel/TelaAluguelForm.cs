@@ -1,5 +1,5 @@
-﻿using FestasInfantis.WinApp.ModuloCliente;
-using FestasInfantis.WinApp.ModuloConfiguracaoDesconto;
+﻿using FestasInfantis.WinApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloCliente;
 using FestasInfantis.WinApp.ModuloTema;
 
 namespace FestasInfantis.WinApp.ModuloAluguel
@@ -40,6 +40,8 @@ namespace FestasInfantis.WinApp.ModuloAluguel
         public TelaAluguelForm(List<Cliente> clientesDisponiveis, List<Tema> temasDisponiveis)
         {
             InitializeComponent();
+
+            this.ConfigurarDialog();
 
             CarregarClientes(clientesDisponiveis);
             CarregarTemas(temasDisponiveis);

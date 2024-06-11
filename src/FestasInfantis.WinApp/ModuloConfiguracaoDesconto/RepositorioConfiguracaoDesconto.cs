@@ -1,4 +1,5 @@
 ﻿using FestasInfantis.WinApp.ModuloAluguel;
+using System.Text.Json;
 
 namespace FestasInfantis.WinApp.ModuloConfiguracaoDesconto
 {
@@ -8,12 +9,30 @@ namespace FestasInfantis.WinApp.ModuloConfiguracaoDesconto
 
         public void GravarConfiguracao(ConfiguracaoDesconto configuracao)
         {
+            FileInfo arquivo = new FileInfo(caminho);
 
+            arquivo.Directory.Create();
+
+            JsonSerializerOptions options = new JsonSerializerOptions()
+            {
+                WriteIndented = true,
+            };
+
+            byte[] registrosEmBytes = JsonSerializer.SerializeToUtf8Bytes(this, options);
+
+            File.WriteAllBytes(caminho, registrosEmBytes);
         }
 
         public ConfiguracaoDesconto ObterConfiguracao()
         {
-            throw new NotImplementedException();
+            FileInfo arquivo = new FileInfo(caminho);
+
+            if (!arquivo.Exists)
+                return null;
+
+            byte[] registrosEmBytes = File.ReadAllBytes(caminho);
+
+            return JsonSerializer.Deserialize<ConfiguracaoDesconto>(registrosEmBytes);
         }
     }
 }

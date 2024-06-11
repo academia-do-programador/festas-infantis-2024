@@ -1,4 +1,6 @@
-﻿namespace FestasInfantis.WinApp.ModuloItem
+﻿using FestasInfantis.WinApp.Compartilhado;
+
+namespace FestasInfantis.WinApp.ModuloItem
 {
     public partial class TelaItemForm : Form
     {
@@ -17,6 +19,8 @@
         public TelaItemForm()
         {
             InitializeComponent();
+
+            this.ConfigurarDialog();
         }
 
         private void btnGravar_Click(object sender, EventArgs e)

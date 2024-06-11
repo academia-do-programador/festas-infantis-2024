@@ -224,7 +224,6 @@
             // btnConfigurarDescontos
             // 
             btnConfigurarDescontos.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnConfigurarDescontos.Enabled = false;
             btnConfigurarDescontos.Image = Properties.Resources.btnConfigurarDescontos;
             btnConfigurarDescontos.ImageScaling = ToolStripItemImageScaling.None;
             btnConfigurarDescontos.ImageTransparentColor = Color.Magenta;

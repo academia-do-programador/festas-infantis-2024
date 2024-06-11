@@ -1,4 +1,6 @@
-﻿namespace FestasInfantis.WinApp.ModuloCliente
+﻿using FestasInfantis.WinApp.Compartilhado;
+
+namespace FestasInfantis.WinApp.ModuloCliente
 {
     public partial class TelaClienteForm : Form
     {
@@ -18,6 +20,8 @@
         public TelaClienteForm()
         {
             InitializeComponent();
+
+            this.ConfigurarDialog();
         }
 
         private void btnGravar_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
 ﻿
+using FestasInfantis.WinApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloItem;
 
 namespace FestasInfantis.WinApp.ModuloTema
@@ -54,6 +55,8 @@ namespace FestasInfantis.WinApp.ModuloTema
         public TelaTemaForm()
         {
             InitializeComponent();
+
+            this.ConfigurarDialog();
         }
 
         public void CarregarItens(List<Item> itens)
