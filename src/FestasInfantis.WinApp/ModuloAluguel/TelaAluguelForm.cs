@@ -1,4 +1,5 @@
 ﻿using FestasInfantis.WinApp.ModuloCliente;
+using FestasInfantis.WinApp.ModuloConfiguracaoDesconto;
 using FestasInfantis.WinApp.ModuloTema;
 
 namespace FestasInfantis.WinApp.ModuloAluguel
@@ -34,7 +35,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             }
         }
 
-        public Desconto Desconto { get; set; }
+        public ConfiguracaoDesconto Desconto { get; set; }
 
         public TelaAluguelForm(List<Cliente> clientesDisponiveis, List<Tema> temasDisponiveis)
         {

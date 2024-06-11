@@ -1,13 +1,13 @@
 ﻿namespace FestasInfantis.WinApp.ModuloAluguel
 {
-    public class Desconto
+    public class ConfiguracaoDesconto
     {
         public float PorcentagemPorAluguel { get; set; }
         public float PorcentagemMaxima { get; set; }
 
-        public Desconto() { }
+        public ConfiguracaoDesconto() { }
 
-        public Desconto(float porcentagemPorAluguel, float porcentagemMaxima)
+        public ConfiguracaoDesconto(float porcentagemPorAluguel, float porcentagemMaxima)
         {
             PorcentagemPorAluguel = porcentagemPorAluguel;
             PorcentagemMaxima = porcentagemMaxima;

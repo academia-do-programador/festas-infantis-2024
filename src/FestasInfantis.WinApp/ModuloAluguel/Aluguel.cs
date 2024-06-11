@@ -10,7 +10,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
         public Cliente Cliente { get; set; }
         public Tema Tema { get; set; }
         public PorcentagemEntradaEnum PorcentagemEntrada { get; set; }
-        public Desconto Desconto { get; set; }
+        public ConfiguracaoDesconto Desconto { get; set; }
         public DateTime Pagamento { get; set; }
         public bool Concluido { get; set; }
 
@@ -19,7 +19,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
          Cliente cliente,
          Tema tema,
          PorcentagemEntradaEnum porcentagemEntrada,
-         Desconto desconto)
+         ConfiguracaoDesconto desconto)
         {
             Festa = festa;
             Cliente = cliente;

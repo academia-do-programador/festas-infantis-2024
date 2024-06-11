@@ -73,6 +73,11 @@ namespace FestasInfantis.WinApp
             controlador.Excluir();
         }
 
+        private void btnConfigurarDescontos_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void ConfigurarTelaPrincipal(ControladorBase controladorSelecionado)
         {
             lblTipoCadastro.Text = "Cadastro de " + controladorSelecionado.TipoCadastro;

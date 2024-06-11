@@ -1,5 +1,6 @@
 ﻿using eAgenda.ConsoleApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloAluguel;
+using FestasInfantis.WinApp.ModuloConfiguracaoDesconto;
 
 namespace FestasInfantis.WinApp.ModuloCliente
 {
@@ -25,7 +26,7 @@ namespace FestasInfantis.WinApp.ModuloCliente
             Cpf = cpf;
         }
 
-        public decimal CalcularDesconto(Desconto configuracaoDesconto)
+        public decimal CalcularDesconto(ConfiguracaoDesconto configuracaoDesconto)
         {
             float desconto = QuantidadeAlugueisConcluidos * configuracaoDesconto.PorcentagemPorAluguel;
 
