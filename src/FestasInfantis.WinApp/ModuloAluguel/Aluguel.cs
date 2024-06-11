@@ -10,7 +10,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
         public Cliente Cliente { get; set; }
         public Tema Tema { get; set; }
         public PorcentagemEntradaEnum PorcentagemEntrada { get; set; }
-        public Desconto ConfiguracaoDesconto { get; set; }
+        public Desconto Desconto { get; set; }
         public DateTime Pagamento { get; set; }
         public bool Concluido { get; set; }
 
@@ -25,7 +25,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             Cliente = cliente;
             Tema = tema;
             PorcentagemEntrada = porcentagemEntrada;
-            ConfiguracaoDesconto = desconto;
+            Desconto = desconto;
 
             Pagamento = DateTime.MinValue;
             Concluido = false;
@@ -39,7 +39,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
 
         public DadosPagamentoAluguel ObterDadosPagamento()
         {
-            decimal percentualCliente = Cliente.CalcularDesconto(ConfiguracaoDesconto);
+            decimal percentualCliente = Cliente.CalcularDesconto(Desconto);
 
             decimal valorTemaComDesconto = Tema.CalcularValorComDesconto(percentualCliente);
 
