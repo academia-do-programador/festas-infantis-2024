@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FestasInfantis.WinApp.ModuloB
 {
-    internal class ClasseB
+    internal class EntidadeB
     {
     }
 }

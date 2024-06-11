@@ -1,6 +1,6 @@
 ﻿namespace FestasInfantis.WinApp.ModuloB
 {
-    internal class RepositorioClasseB
+    internal class RepositorioEntidadeB
     {
     }
 }
