@@ -34,7 +34,7 @@ namespace FestasInfantis.WinApp
             repositorioItem = new RepositorioItemEmArquivo(contexto);
             repositorioTema = new RepositorioTemaEmArquivo(contexto);
             repositorioEntidadeC = new RepositorioEntidadeC();
-            repositorioEntidadeD = new RepositorioEntidadeD():
+            repositorioEntidadeD = new RepositorioEntidadeD();
         }
 
         public void AtualizarRodape(string texto)
