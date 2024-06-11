@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FestasInfantis.WinApp.ModuloA
 {
-    internal class ControladorClasseA
+    internal class TelaEntidadeA
     {
     }
 }

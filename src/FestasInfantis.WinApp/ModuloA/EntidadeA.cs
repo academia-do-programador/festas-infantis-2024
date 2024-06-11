@@ -1,6 +1,6 @@
 ﻿namespace FestasInfantis.WinApp.ModuloA
 {
-    public class RepositorioClasseA
+    public class EntidadeA
     {
     }
 }
