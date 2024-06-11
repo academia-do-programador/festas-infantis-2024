@@ -28,7 +28,7 @@ namespace FestasInfantis.WinApp.ModuloConfiguracaoDesconto
             FileInfo arquivo = new FileInfo(caminho);
 
             if (!arquivo.Exists)
-                return null;
+                return new ConfiguracaoDesconto();
 
             byte[] registrosEmBytes = File.ReadAllBytes(caminho);
 

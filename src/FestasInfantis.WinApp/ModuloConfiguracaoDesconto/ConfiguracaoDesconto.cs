@@ -2,12 +2,16 @@
 {
     public class ConfiguracaoDesconto
     {
-        public float PorcentagemPorAluguel { get; set; }
-        public float PorcentagemMaxima { get; set; }
+        public decimal PorcentagemPorAluguel { get; set; }
+        public decimal PorcentagemMaxima { get; set; }
 
-        public ConfiguracaoDesconto() { }
+        public ConfiguracaoDesconto()
+        {
+            PorcentagemPorAluguel = 0.0m;
+            PorcentagemMaxima = 0.0m;
+        }
 
-        public ConfiguracaoDesconto(float porcentagemPorAluguel, float porcentagemMaxima)
+        public ConfiguracaoDesconto(decimal porcentagemPorAluguel, decimal porcentagemMaxima)
         {
             PorcentagemPorAluguel = porcentagemPorAluguel;
             PorcentagemMaxima = porcentagemMaxima;

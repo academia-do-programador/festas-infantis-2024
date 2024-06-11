@@ -5,23 +5,34 @@ namespace FestasInfantis.WinApp.ModuloConfiguracaoDesconto
 {
     public partial class TelaConfiguracaoDescontoForm : Form
     {
-        ConfiguracaoDesconto configuracaoDesconto;
+        private ConfiguracaoDesconto configuracaoDesconto;
+        public ConfiguracaoDesconto ConfiguracaoDesconto
+        {
+            get => configuracaoDesconto;
+            set
+            {
+                txtPorcentagemAluguel.Value = (decimal)value.PorcentagemPorAluguel;
+                txtPorcentagemMaxima.Value = (decimal)value.PorcentagemMaxima;
+            }
+        }
 
-        public TelaConfiguracaoDescontoForm()
+        public TelaConfiguracaoDescontoForm(ConfiguracaoDesconto configuracaoAtual)
         {
             InitializeComponent();
 
             this.ConfigurarDialog();
+
+            ConfiguracaoDesconto = configuracaoAtual;
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            float porcentagemDesconto = (float)txtPorcentagemAluguel.Value;
-            float porcentagemMaxima = (float)txtPorcentagemMaxima.Value;
+            decimal porcentagemDesconto = txtPorcentagemAluguel.Value;
+            decimal porcentagemMaxima = txtPorcentagemMaxima.Value;
 
-            configuracaoDesconto = new ConfiguracaoDesconto(porcentagemDesconto, porcentagemMaxima);
+            ConfiguracaoDesconto = new ConfiguracaoDesconto(porcentagemDesconto, porcentagemMaxima);
 
-            List<string> erros = configuracaoDesconto.Validar();
+            List<string> erros = ConfiguracaoDesconto.Validar();
 
             if (erros.Count > 0)
             {

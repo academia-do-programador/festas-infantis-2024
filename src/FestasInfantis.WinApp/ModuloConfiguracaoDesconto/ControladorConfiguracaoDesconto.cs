@@ -13,15 +13,15 @@ namespace FestasInfantis.WinApp.ModuloConfiguracaoDesconto
 
         public void Configurar()
         {
-            TelaConfiguracaoDescontoForm telaConfiguracao = new TelaConfiguracaoDescontoForm();
+            ConfiguracaoDesconto configuracaoAtual = repositorio.ObterConfiguracao();
+
+            TelaConfiguracaoDescontoForm telaConfiguracao = new TelaConfiguracaoDescontoForm(configuracaoAtual);
 
             DialogResult resultado = telaConfiguracao.ShowDialog();
 
             if (resultado != DialogResult.OK) return;
 
-            ConfiguracaoDesconto configuracao = new ConfiguracaoDesconto();
-
-            repositorio.GravarConfiguracao(configuracao);
+            repositorio.GravarConfiguracao(telaConfiguracao.ConfiguracaoDesconto);
 
             TelaPrincipalForm.Instancia.AtualizarRodape("A configuração foi salva com sucesso!");
         }
