@@ -1,8 +1,6 @@
 ﻿using FestasInfantis.WinApp.ModuloCliente;
 using FestasInfantis.WinApp.ModuloItem;
 using FestasInfantis.WinApp.ModuloTema;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace FestasInfantis.WinApp.Compartilhado
 {
@@ -31,17 +29,7 @@ namespace FestasInfantis.WinApp.Compartilhado
         {
             FileInfo arquivo = new FileInfo(caminho);
 
-            arquivo.Directory.Create();
-
-            JsonSerializerOptions options = new JsonSerializerOptions()
-            {
-                WriteIndented = true,
-                ReferenceHandler = ReferenceHandler.Preserve
-            };
-
-            byte[] registrosEmBytes = JsonSerializer.SerializeToUtf8Bytes(this, options);
-
-            File.WriteAllBytes(caminho, registrosEmBytes);
+            arquivo.Serializar(this, preservarReferencias: true);
         }
 
         protected void CarregarDados()
@@ -51,14 +39,7 @@ namespace FestasInfantis.WinApp.Compartilhado
             if (!arquivo.Exists)
                 return;
 
-            byte[] registrosEmBytes = File.ReadAllBytes(caminho);
-
-            JsonSerializerOptions options = new JsonSerializerOptions()
-            {
-                ReferenceHandler = ReferenceHandler.Preserve
-            };
-
-            ContextoDados ctx = JsonSerializer.Deserialize<ContextoDados>(registrosEmBytes, options);
+            ContextoDados ctx = arquivo.Deserializar<ContextoDados>(preservarReferencias: true);
 
             if (ctx == null)
                 return;

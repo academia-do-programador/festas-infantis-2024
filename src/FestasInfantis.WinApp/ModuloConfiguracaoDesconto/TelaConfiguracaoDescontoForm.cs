@@ -11,8 +11,8 @@ namespace FestasInfantis.WinApp.ModuloConfiguracaoDesconto
             get => configuracaoDesconto;
             set
             {
-                txtPorcentagemAluguel.Value = (decimal)value.PorcentagemPorAluguel;
-                txtPorcentagemMaxima.Value = (decimal)value.PorcentagemMaxima;
+                txtPorcentagemAluguel.Value = value.PorcentagemPorAluguel;
+                txtPorcentagemMaxima.Value = value.PorcentagemMaxima;
             }
         }
 
@@ -30,9 +30,9 @@ namespace FestasInfantis.WinApp.ModuloConfiguracaoDesconto
             decimal porcentagemDesconto = txtPorcentagemAluguel.Value;
             decimal porcentagemMaxima = txtPorcentagemMaxima.Value;
 
-            ConfiguracaoDesconto = new ConfiguracaoDesconto(porcentagemDesconto, porcentagemMaxima);
+            configuracaoDesconto = new ConfiguracaoDesconto(porcentagemDesconto, porcentagemMaxima);
 
-            List<string> erros = ConfiguracaoDesconto.Validar();
+            List<string> erros = configuracaoDesconto.Validar();
 
             if (erros.Count > 0)
             {

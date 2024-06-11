@@ -1,6 +1,5 @@
 ﻿using eAgenda.ConsoleApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloAluguel;
-using FestasInfantis.WinApp.ModuloConfiguracaoDesconto;
 
 namespace FestasInfantis.WinApp.ModuloCliente
 {
@@ -28,12 +27,12 @@ namespace FestasInfantis.WinApp.ModuloCliente
 
         public decimal CalcularDesconto(ConfiguracaoDesconto configuracaoDesconto)
         {
-            float desconto = QuantidadeAlugueisConcluidos * configuracaoDesconto.PorcentagemPorAluguel;
+            decimal desconto = QuantidadeAlugueisConcluidos * configuracaoDesconto.PorcentagemPorAluguel;
 
             if (desconto > configuracaoDesconto.PorcentagemMaxima)
                 desconto = configuracaoDesconto.PorcentagemMaxima;
 
-            return (decimal)desconto;
+            return desconto;
         }
 
         public override List<string> Validar()
