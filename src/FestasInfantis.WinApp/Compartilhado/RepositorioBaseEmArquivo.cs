@@ -43,7 +43,6 @@ namespace FestasInfantis.WinApp.Compartilhado
 
         public virtual bool Excluir(int id)
         {
-
             bool conseguiuExcluir = ObterRegistros().Remove(SelecionarPorId(id));
 
             if (!conseguiuExcluir)

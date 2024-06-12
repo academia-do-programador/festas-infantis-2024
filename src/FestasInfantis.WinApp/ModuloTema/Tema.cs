@@ -7,7 +7,7 @@ namespace FestasInfantis.WinApp.ModuloTema
     {
         public string Nome { get; set; }
 
-        public List<Item> Itens { get; set; } = new List<Item>();
+        public List<Item> Itens { get; set; }
 
         public decimal Valor
         {
@@ -22,9 +22,12 @@ namespace FestasInfantis.WinApp.ModuloTema
             }
         }
 
-        public Tema() { }
+        public Tema()
+        {
+            Itens = new List<Item>();
+        }
 
-        public Tema(string nome)
+        public Tema(string nome) : this()
         {
             Nome = nome;
         }

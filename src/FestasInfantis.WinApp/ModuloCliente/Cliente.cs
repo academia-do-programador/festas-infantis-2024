@@ -16,9 +16,12 @@ namespace FestasInfantis.WinApp.ModuloCliente
             get => Alugueis.Count(a => a.Concluido);
         }
 
-        public Cliente() { }
+        public Cliente()
+        {
+            Alugueis = new List<Aluguel>();
+        }
 
-        public Cliente(string nome, string telefone, string cpf)
+        public Cliente(string nome, string telefone, string cpf) : this()
         {
             Nome = nome;
             Telefone = telefone;
