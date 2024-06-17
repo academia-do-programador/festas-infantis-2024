@@ -41,7 +41,6 @@ namespace FestasInfantis.WinApp
             statusLabelPrincipal.Text = texto;
         }
 
-
         private void clientesMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorCliente(repositorioCliente);
