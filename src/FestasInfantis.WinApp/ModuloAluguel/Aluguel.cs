@@ -11,6 +11,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
         public Tema Tema { get; set; }
         public PorcentagemEntradaEnum PorcentagemEntrada { get; set; }
         public ConfiguracaoDesconto Desconto { get; set; }
+        public DateTime Abertura { get; set; }
         public DateTime Pagamento { get; private set; }
         public bool Concluido { get; private set; }
 
@@ -27,6 +28,7 @@ namespace FestasInfantis.WinApp.ModuloAluguel
             PorcentagemEntrada = porcentagemEntrada;
             Desconto = desconto;
 
+            Abertura = DateTime.Now;
             Pagamento = DateTime.MinValue;
             Concluido = false;
         }
