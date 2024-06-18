@@ -1,4 +1,6 @@
 ﻿using eAgenda.ConsoleApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloAluguel;
+using FestasInfantis.WinApp.ModuloConfiguracaoDesconto;
 
 namespace FestasInfantis.WinApp.ModuloCliente
 {
@@ -8,6 +10,10 @@ namespace FestasInfantis.WinApp.ModuloCliente
         public string Telefone { get; set; }
         public string Cpf { get; set; }
 
+        public List<Aluguel> Alugueis { get; set; }
+
+        public int QuantidadeAlugueisConcluidos => Alugueis.Count(a => a.Concluido);
+
         public Cliente() { }
 
         public Cliente(string nome, string telefone, string cpf)
@@ -15,6 +21,16 @@ namespace FestasInfantis.WinApp.ModuloCliente
             Nome = nome;
             Telefone = telefone;
             Cpf = cpf;
+        }
+
+        public decimal CalcularDesconto(ConfiguracaoDesconto configuracaoDesconto)
+        {
+            decimal desconto = QuantidadeAlugueisConcluidos * configuracaoDesconto.PorcentagemPorAluguel;
+
+            if (desconto > configuracaoDesconto.PorcentagemMaxima)
+                desconto = configuracaoDesconto.PorcentagemMaxima;
+
+            return desconto;
         }
 
         public override List<string> Validar()
