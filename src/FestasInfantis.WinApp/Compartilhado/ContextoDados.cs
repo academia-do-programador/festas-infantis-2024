@@ -1,4 +1,5 @@
-﻿using FestasInfantis.WinApp.ModuloCliente;
+﻿using FestasInfantis.WinApp.ModuloAluguel;
+using FestasInfantis.WinApp.ModuloCliente;
 using FestasInfantis.WinApp.ModuloItem;
 using FestasInfantis.WinApp.ModuloTema;
 using System.Text.Json;
@@ -13,12 +14,14 @@ namespace FestasInfantis.WinApp.Compartilhado
         public List<Cliente> Clientes { get; set; }
         public List<Item> Itens { get; set; }
         public List<Tema> Temas { get; set; }
+        public List<Aluguel> Alugueis { get; set; }
 
         public ContextoDados()
         {
             Clientes = new List<Cliente>();
             Itens = new List<Item>();
             Temas = new List<Tema>();
+            Alugueis = new List<Aluguel>();
         }
 
         public ContextoDados(bool carregarDados) : this()
@@ -66,6 +69,7 @@ namespace FestasInfantis.WinApp.Compartilhado
             Clientes = ctx.Clientes;
             Itens = ctx.Itens;
             Temas = ctx.Temas;
+            Alugueis = ctx.Alugueis;
         }
     }
 }

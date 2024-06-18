@@ -332,7 +332,7 @@
             cmbEntrada.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbEntrada.Font = new Font("Segoe UI", 11.25F);
             cmbEntrada.FormattingEnabled = true;
-            cmbEntrada.Location = new Point(76, 58);
+            cmbEntrada.Location = new Point(97, 58);
             cmbEntrada.Name = "cmbEntrada";
             cmbEntrada.Size = new Size(167, 28);
             cmbEntrada.TabIndex = 11;
@@ -341,11 +341,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F);
-            label1.Location = new Point(29, 61);
+            label1.Location = new Point(28, 61);
             label1.Name = "label1";
-            label1.Size = new Size(44, 20);
+            label1.Size = new Size(63, 20);
             label1.TabIndex = 16;
-            label1.Text = "Sinal:";
+            label1.Text = "Entrada:";
             // 
             // cmbTemas
             // 
@@ -406,6 +406,7 @@
             btnCalcular.Padding = new Padding(5);
             btnCalcular.Size = new Size(76, 34);
             btnCalcular.Text = "Calcular";
+            btnCalcular.Click += btnCalcular_Click;
             // 
             // txtValorTema
             // 
@@ -513,7 +514,7 @@
             cmbClientes.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbClientes.Font = new Font("Segoe UI", 11.25F);
             cmbClientes.FormattingEnabled = true;
-            cmbClientes.Location = new Point(76, 24);
+            cmbClientes.Location = new Point(97, 24);
             cmbClientes.Name = "cmbClientes";
             cmbClientes.Size = new Size(167, 28);
             cmbClientes.TabIndex = 9;
@@ -522,7 +523,7 @@
             // 
             lblNomeCliente.AutoSize = true;
             lblNomeCliente.Font = new Font("Segoe UI", 11.25F);
-            lblNomeCliente.Location = new Point(15, 28);
+            lblNomeCliente.Location = new Point(36, 28);
             lblNomeCliente.Name = "lblNomeCliente";
             lblNomeCliente.Size = new Size(58, 20);
             lblNomeCliente.TabIndex = 10;
@@ -551,6 +552,7 @@
             btnGravar.TabIndex = 20;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.Click += btnGravar_Click;
             // 
             // TelaAluguelForm
             // 
