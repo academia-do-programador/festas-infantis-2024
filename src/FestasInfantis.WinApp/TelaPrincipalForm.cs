@@ -1,6 +1,7 @@
 using eAgenda.WinApp.Compartilhado;
 using FestasInfantis.WinApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloCliente;
+using FestasInfantis.WinApp.ModuloConfiguracaoDesconto;
 using FestasInfantis.WinApp.ModuloItem;
 using FestasInfantis.WinApp.ModuloTema;
 
@@ -12,6 +13,7 @@ namespace FestasInfantis.WinApp
 
         ContextoDados contexto;
 
+        IRepositorioConfiguracaoDesconto repositorioConfiguracao;
         IRepositorioCliente repositorioCliente;
         IRepositorioItem repositorioItem;
         IRepositorioTema repositorioTema;
@@ -26,16 +28,18 @@ namespace FestasInfantis.WinApp
             Instancia = this;
 
             contexto = new ContextoDados(true);
+
+            repositorioConfiguracao = new RepositorioConfiguracaoDesconto();
             repositorioCliente = new RepositorioClienteEmArquivo(contexto);
             repositorioItem = new RepositorioItemEmArquivo(contexto);
             repositorioTema = new RepositorioTemaEmArquivo(contexto);
+
         }
 
         public void AtualizarRodape(string texto)
         {
             statusLabelPrincipal.Text = texto;
         }
-
 
         private void clientesMenuItem_Click(object sender, EventArgs e)
         {
@@ -71,6 +75,14 @@ namespace FestasInfantis.WinApp
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             controlador.Excluir();
+        }
+
+        private void btnConfigurarDescontos_Click(object sender, EventArgs e)
+        {
+            ControladorConfiguracaoDesconto controladorConfiguracao =
+                new ControladorConfiguracaoDesconto(repositorioConfiguracao);
+
+            controladorConfiguracao.Configurar();
         }
 
         private void ConfigurarTelaPrincipal(ControladorBase controladorSelecionado)
